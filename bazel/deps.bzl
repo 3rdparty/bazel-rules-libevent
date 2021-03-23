@@ -6,8 +6,6 @@ load("@rules_foreign_cc//foreign_cc:repositories.bzl", "rules_foreign_cc_depende
 def libevent_deps():
     rules_foreign_cc_dependencies()
 
-    # NOTE: can not try and add libevent until ***after*** we have
-    # done `rules_foreign_cc_dependencies()` above.
     if "com_github_libevent_libevent" not in native.existing_rules():
         http_archive(
             name = "com_github_libevent_libevent",

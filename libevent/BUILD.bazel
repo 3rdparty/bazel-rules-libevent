@@ -8,6 +8,7 @@ filegroup(
 
 cmake(
     name = "event",
+    visibility = ["//visibility:public"],
     cache_entries = {
         "EVENT__DISABLE_OPENSSL": "on",
         "EVENT__DISABLE_MBEDTLS": "on",

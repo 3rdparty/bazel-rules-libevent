@@ -27,11 +27,11 @@ cmake(
         # Including libevent_core is a requirement on those platforms, but
         # results in duplicate symbols when built on macOS.
         # See https://github.com/lyft/envoy-mobile/issues/677 for details.
-        "//bazel:apple": [
+        "@com_github_3rdparty_bazel_rules_libevent//bazel:apple": [
             "libevent.a",
             "libevent_pthreads.a",
         ],
-        "//bazel:windows_x86_64": [
+        "@com_github_3rdparty_bazel_rules_libevent//bazel:windows_x86_64": [
             "event.lib",
             "event_core.lib",
         ],

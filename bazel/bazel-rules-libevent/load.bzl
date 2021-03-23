@@ -7,9 +7,9 @@ def libevent_load():
     if "com_github_3rdparty_bazel_rules_libevent" not in native.existing_rules():
         git_repository(
             name = "com_github_3rdparty_bazel_rules_libevent",
-            commit = "",
+            commit = "1f481d9655cdd403307d51fd7d5a8c0f96589c4c",
             remote = "https://github.com/3rdparty/bazel-rules-libevent",
-            shallow_since = " -0700",
+            shallow_since = "1616527405 -0700",
         )
 
     if "rules_foreign_cc" not in native.existing_rules():

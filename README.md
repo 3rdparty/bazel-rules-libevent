@@ -1,20 +1,21 @@
 # Bazel build rules for libevent
 
-To use these rules, add the following to your `WORKSPACE` file:
+Follows the Bazel build "load/deps" pattern (in order to deal with recursive dependencies). To use:
 
-```bazel
-load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
+(1) Copy the directory `./bazel/bazel-rules-libevent` into your repository.
 
-git_repository(
-    name = "com_github_3rdparty_bazel_rules_libevent",
-    commit = "c73729429362fe153c6f6db5faaf9ec315e7da49",
-    remote = "https://github.com/3rdparty/bazel-rules-libvent",
-    shallow_since = "1616474311 -0700",
-)
+(2) Add the following to your `WORKSPACE` (or `WORKSPACE.bazel`):
 
-load("@com_github_3rdparty_bazel_rules_libevent//:bazel/libevent.bzl", "libevent_deps")
+  ```bazel
+  load("//bazel/bazel-rules-libevent:load.bzl", "libevent_load")
 
-libevent_deps()
-```
+  libevent_load()
 
-You can then use `@com_github_libevent_libevent//:libevent` in your target's `deps`.
+  load("@com_github_3rdparty_bazel_rules_libevent//bazel:deps.bzl", "libevent_deps")
+
+  libevent_deps()
+  ```
+
+(3) You can then use `@com_github_libevent_libevent//:event` in your target's `deps`.
+
+(4) Repeat the steps starting at (1) from this repository at what ever version that you want to use.

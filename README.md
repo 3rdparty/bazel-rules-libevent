@@ -18,4 +18,4 @@ Follows the Bazel build "load/deps" pattern (in order to deal with recursive dep
 
 (3) You can then use `@com_github_libevent_libevent//:event` in your target's `deps`.
 
-(4) Repeat the steps starting at (1) from this repository at what ever version that you want to use.
+(4) Repeat the steps starting at (1) at the desired version of this repository that you want to use.

@@ -25,5 +25,5 @@ def deps(repo_mapping = {}):
             sha256 = "4c80e5fe044ce5f8055b20a2f141ee32ec2614000f3e95d2aa81611a4c8f5213",
             strip_prefix = "libevent-62c152d9a7cd264b993dad730c4163c6ede2e0a3",
             repo_mapping = repo_mapping,
-            build_file = "@com_github_3rdparty_bazel_rules_libevent/:BUILD.bazel",
+            build_file = "@com_github_3rdparty_bazel_rules_libevent//:BUILD.bazel",
         )

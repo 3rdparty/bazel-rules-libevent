@@ -25,8 +25,8 @@ def repos(external = True, repo_mapping = {}):
     if external and "com_github_3rdparty_bazel_rules_libevent" not in native.existing_rules():
         git_repository(
             name = "com_github_3rdparty_bazel_rules_libevent",
-            commit = "4b44c5b0d6d26235191a06ed9fdcff1343593ab5",
+            commit = "8a8ac3906ad9956cb715ae0c26bd3adcb2817697",
             remote = "https://github.com/3rdparty/bazel-rules-libevent",
-            shallow_since = "1616865950 -0700",
+            shallow_since = "1616867136 -0700",
             repo_mapping = repo_mapping,
         )

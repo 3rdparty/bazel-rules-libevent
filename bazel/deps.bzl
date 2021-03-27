@@ -3,7 +3,7 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("@rules_foreign_cc//foreign_cc:repositories.bzl", "rules_foreign_cc_dependencies")
 
-def libevent_deps():
+def deps(repo_mapping = {}):
     rules_foreign_cc_dependencies()
 
     if "com_github_libevent_libevent" not in native.existing_rules():
@@ -24,5 +24,6 @@ def libevent_deps():
             urls = ["https://github.com/libevent/libevent/archive/62c152d9a7cd264b993dad730c4163c6ede2e0a3.tar.gz"],
             sha256 = "4c80e5fe044ce5f8055b20a2f141ee32ec2614000f3e95d2aa81611a4c8f5213",
             strip_prefix = "libevent-62c152d9a7cd264b993dad730c4163c6ede2e0a3",
-            build_file = "@com_github_3rdparty_bazel_rules_libevent//libevent:BUILD.bazel",
+            repo_mapping = repo_mapping,
+            build_file = "@com_github_3rdparty_bazel_rules_libevent/:BUILD.bazel",
         )
